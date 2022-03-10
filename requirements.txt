@@ -1,0 +1,5 @@
+google-cloud-translate==2.0.1
+python-daemon==2.3.0
+six~=1.16.0
+setuptools~=60.9.3
+pytest==7.0.1
