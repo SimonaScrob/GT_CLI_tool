@@ -21,6 +21,7 @@ def main():
     if args.l in LANGUAGES and os.path.exists(args.f):
         with xmlrpc.client.ServerProxy(f"http://{SERVER_HOST}:{SERVER_PORT}/") as proxy:
             translated_text = proxy.translate(args.f, args.l)
+            print("Translating, please wait…")
             print(translated_text)
     else:
         print('Wrong language or filename')

@@ -6,6 +6,7 @@ setup(
     packages=['gtranslate'],
     entry_points={
         'console_scripts': [
-            'gtranslate = gtranslate.__main__:main'
+            'gtranslate = gtranslate.__main__:main',
+            'gtd = gtd.__main__:main'
         ]
     })

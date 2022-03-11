@@ -2,7 +2,7 @@ import multiprocessing
 import os
 from xmlrpc.server import SimpleXMLRPCServer
 from daemon import daemon
-from api_helper import GoogleTranslateAPIHelper
+from gtd.api_helper import GoogleTranslateAPIHelper
 from settings import SERVER_PORT, SERVER_HOST
 
 
@@ -64,6 +64,10 @@ def run_server():
 here = os.path.dirname(os.path.abspath(__file__))
 out = open('checking_print.log', 'w+')
 
-# run gtd server as daemon
-with daemon.DaemonContext(working_directory=here, stdout=out):
-    run_server()
+def main():
+    """
+    Run gtd server as daemon.
+    """
+    print("Translation daemon started")
+    with daemon.DaemonContext(working_directory=here, stdout=out):
+        run_server()
